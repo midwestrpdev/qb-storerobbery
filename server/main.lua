@@ -6,25 +6,25 @@ local cashB = 450				--<< how much maximum you can get from a robbery
 CreateThread(function()
     while true do
         SafeCodes = {
-            [1] = math.random(1000, 9999),
+            [1] = math.random(1000, 2000),
             [2] = {math.random(1, 149), math.random(500.0, 600.0), math.random(360.0, 400), math.random(600.0, 900.0)},
             [3] = {math.random(150, 359), math.random(-300.0, -60.0), math.random(0, 100), math.random(-500.0, -160.0)},
-            [4] = math.random(1000, 9999),
-            [5] = math.random(1000, 9999),
+            [4] = math.random(1000, 2000),
+            [5] = math.random(1000, 2000),
             [6] = {math.random(1, 149), math.random(150.0, 200.0), math.random(100, 140), math.random(150.0, 220.0), math.random(-100, 100), math.random(140, 300)},
-            [7] = math.random(1000, 9999),
-            [8] = math.random(1000, 9999),
-            [9] = math.random(1000, 9999),
+            [7] = math.random(1000, 2000),
+            [8] = math.random(1000, 2000),
+            [9] = math.random(1000, 2000),
             [10] = {math.random(1, 149), math.random(300.0, 500.0), math.random(200, 260), math.random(500.0, 800.0), math.random(300, 440), math.random(650, 900)},
-            [11] = math.random(1000, 9999),
-            [12] = math.random(1000, 9999),
-            [13] = math.random(1000, 9999),
+            [11] = math.random(1000, 2000),
+            [12] = math.random(1000, 2000),
+            [13] = math.random(1000, 2000),
             [14] = {math.random(150, 450), math.random(-360.0, 0.0), math.random(360, 720)},
-            [15] = math.random(1000, 9999),
-            [16] = math.random(1000, 9999),
-            [17] = math.random(1000, 9999),
+            [15] = math.random(1000, 2000),
+            [16] = math.random(1000, 2000),
+            [17] = math.random(1000, 2000),
             [18] = {math.random(150, 450), math.random(1.0, 100.0), math.random(360, 450), math.random(300.0, 340.0), math.random(350, 400), math.random(320.0, 340.0), math.random(350, 600)},
-            [19] = math.random(1000, 9999),
+            [19] = math.random(1000, 2000),
         }
         Wait((1000 * 60) * 40)
     end
@@ -58,7 +58,7 @@ RegisterNetEvent('qb-storerobbery:server:takeMoney', function(register, isDone)
                 }
             else
                 info = {
-                    label = Lang:t("text.safe_code")..tostring(math.floor((code[1] % 360) / 3.60)).."-"..tostring(math.floor((code[2] % 360) / 3.60)).."-"..tostring(math.floor((code[3] % 360) / 3.60)).."-"..tostring(math.floor((code[4] % 360) / 3.60)).."-"..tostring(math.floor((code[5] % 360) / 3.60))
+                    label = Lang:t("text.safe_code")..tostring(math.floor((code[1] % 300) / 3.00)).."-"..tostring(math.floor((code[2] % 300) / 3.00)).."-"..tostring(math.floor((code[3] % 300) / 3.00)).."-"..tostring(math.floor((code[4] % 360) / 3.60)).."-"..tostring(math.floor((code[5] % 300) / 3.00))
                 }
             end
             Player.Functions.AddItem("stickynote", 1, false, info)
